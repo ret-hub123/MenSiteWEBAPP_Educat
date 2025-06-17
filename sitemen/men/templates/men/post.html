@@ -1,0 +1,26 @@
+{% extends 'sitemen/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <link type="text/css" href="{% static 'men/css/main.css' %}" rel="stylesheet" />
+
+
+    <h2 class="pb-2 border-bottom title">
+        Пост
+    </h2>
+
+    <div class="card fixed-card">
+
+          <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.content }}</p>
+             {% if post.photo %}
+            {{ post.photo.url }}
+            {% else %}
+            <p>Фото отсутствует</p>
+            {% endif %}
+
+          </div>
+        </div>
+{% endblock %}

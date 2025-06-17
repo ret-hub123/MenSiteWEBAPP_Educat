@@ -5,8 +5,10 @@ MainAPP = views.MainAPP()
 
 
 urlpatterns = [
-    path('', MainAPP.index),
-    path('categories/', MainAPP.categories)
+    path('', MainAPP.index, name = 'main'),
+    path('post/<slug:post_slug>/', MainAPP.show_post, name = 'post'),
+    path('categories/<slug:cat>/', MainAPP.categories, name = 'categories')
 ]
+
 
 
