@@ -16,7 +16,7 @@
             <h5 class="card-title">{{ post.title }}</h5>
             <p class="card-text">{{ post.content }}</p>
              {% if post.photo %}
-            {{ post.photo.url }}
+             <img src="{{ post.photo.url }}" style="width: 200px; height: 200px;">
             {% else %}
             <p>Фото отсутствует</p>
             {% endif %}

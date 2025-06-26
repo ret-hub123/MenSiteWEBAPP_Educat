@@ -4,6 +4,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
 }
 
 header{
@@ -32,7 +33,6 @@ header > ul > li {
 .footer {
     padding-left: 10.25rem;
     padding-right: 10.25rem;
-
     position: fixed;
     right: 0;
     left: 0;
@@ -43,4 +43,13 @@ header > ul > li {
 main{
     padding-left: 10.25rem;
     padding-right: 10.25rem;
+    margin-bottom: 150px;
 }
+
+.footer-item {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+}
+
+

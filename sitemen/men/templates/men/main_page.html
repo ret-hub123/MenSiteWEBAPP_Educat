@@ -4,24 +4,22 @@
 {% block content %}
     <link type="text/css" href="{% static 'men/css/main.css' %}" rel="stylesheet" />
 
-
     <h2 class="pb-2 border-bottom title">
-        Актуальные посты
-    </h2>
+        {{ title }}
+    </h2>tttttt
 
-
-   <div class="container">
+rtf   <div class="container">
   <div class="row">
 
-    {% for post in all_posts %}
+    {% for post in posts %}
       <div class="col-md-4 mb-4 card-wrapper">
         <div class="card fixed-card">
 
-          <div class="card-body">
+          <div class="card-borrrdyr">
             <h5 class="card-title">{{ post.title }}</h5>
             <p class="card-text">{{ post.content }}</p>
              {% if post.photo %}
-            {{ post.photo.url }}
+            {{ post.photo }}
             {% else %}
             <p>Фото отсутствует</p>
             {% endif %}
@@ -37,3 +35,4 @@
 
 
 {% endblock %}
+rrrrrrrrr5

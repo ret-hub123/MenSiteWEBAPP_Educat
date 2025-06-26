@@ -1,10 +1,11 @@
 {% load static %}
+{% load men_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Men .!.</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link type="text/css" href="{% static 'sitemen/css/base.css' %}" rel="stylesheet" />
@@ -22,11 +23,11 @@
             <button class="nav-link text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Categories</button>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link text-white" aria-current="page">Add Post</a>
+            <a href="{% url 'add_post' %}" class="nav-link text-white" aria-current="page">Add Post</a>
         </li>
 
         <li class="nav-item">
-            <a href="#" class="nav-link text-white" aria-current="page">About</a>
+            <a href="{% url 'about' %}" class="nav-link text-white" aria-current="page">About</a>
         </li>
     </ul>
     <div>
@@ -38,19 +39,19 @@
 
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Categories men</h5>
+
+    <h2 class="offcanvas-title pb-2" id="offcanvasScrollingLabel">Categories men</h2>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
     <div>
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 px-3 " role="search">
-      <input type="search" class="form-control form-control-dark text-opacity-75" placeholder="Search cat..." aria-label="Search">
+      <input type="search" class="form-control form-control-dark text-opacity-75" placeholder="Введите категорию..." aria-label="Search">
       </form>
     </div>
   <div class="offcanvas-body">
     <ul class="nav nav-pills flex-column mb-auto">
-        {% for cat in cats %}
-        <li> <a href="#" class="nav-link link-body-emphasis bg-dark text-white">{{cat}}</a> </li>
-        {% endfor %}
+
+        {% show_categories %}
 
     </ul>
   </div>
@@ -65,9 +66,17 @@
         WWW bez babъ
     </div>
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-        <li class="ms-3 text-white">GIT</li>
-        <li class="ms-3 text-white">TG</li>
-    </ul>
+  <li class="ms-3 text-white">
+    <a href="https://github.com/ret-hub123/Backend_ways.git">
+      <img class="footer-item" src="{% static 'sitemen/image/free-icon-github-1051377.png' %}" alt="GitHub">
+    </a>
+  </li>
+  <li class="ms-3 text-white">
+    <a href="https://t.me/crivay_capcha">
+      <img class="footer-item" src="{% static 'sitemen/image/free-icon-communication-13266190.png' %}" alt="Telegram">
+    </a>
+  </li>
+</ul>
 </div>
 
 

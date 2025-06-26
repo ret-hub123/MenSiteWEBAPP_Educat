@@ -1,0 +1,24 @@
+{% extends 'sitemen/base.html' %}
+{% load static %}
+
+{% block content %}
+    <link type="text/css" href="{% static 'men/css/main.css' %}" rel="stylesheet" />
+
+
+    <h2 class="pb-2 border-bottom title">
+        {{ title }}
+    </h2>
+
+    <form class="add-post bg-dark d-flex justify-content-center mx-auto" action="" method = 'POST' enctype="multipart/form-data">
+    {% csrf_token %}
+        {% for f in form %}
+
+        <p><label class="form-label" for="{{f.if_for_label}}"> {{f.label}}</label> {{ f }}</p>
+        <div class="form-error">{{ f.errors }}</div>
+
+        {% endfor %}
+        <p><button class="button-add-post mx-auto" type="submit">Опубликовать</button></p>
+    </form>
+
+
+{% endblock %}

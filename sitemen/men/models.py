@@ -14,11 +14,15 @@ class Men(models.Model):
     photo = models.ImageField(upload_to = 'image_for_men', default = None, blank = True, null = True)
     cat = models.ForeignKey("Category", on_delete=models.PROTECT, null=True)
 
+
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
         return reverse("post", kwargs={"post_slug": self.slug})
+
+    class Meta:
+        ordering = ['-time_create']
 
 
 class Category(models.Model):
@@ -27,3 +31,11 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse("categories", kwargs={"cat": self.slug})
+
+
+
+
+
